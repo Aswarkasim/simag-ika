@@ -12,7 +12,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /* @import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap'); */
 
 :root {
 	--blue: #2C3E50;
@@ -5897,6 +5897,10 @@ input[type="button"].btn-block {
 	color: #fff;
 	background-color: #18BC9C;
 	border: 0 solid transparent;
+}
+
+.page-link a {
+	color: #fff;
 }
 
 .page-link:hover {

@@ -8,6 +8,7 @@ class Crud_model extends CI_Model
     {
         $query = $this->db->select('*')
             ->from($table)
+            ->order_by('date_created', 'DESC')
             ->get();
         return $query->result();
     }
@@ -23,16 +24,13 @@ class Crud_model extends CI_Model
 
 
 
-    function getId($table, $where)
-    {
-        return $this->db->get_where($where, $table);
-    }
 
     public function listingOneAll($table, $field, $where, $limit = null, $offset = null)
     {
         $query = $this->db->select('*')
             ->from($table)
             ->where($field, $where)
+            // ->order_by('date_created', 'DESC')
             ->limit($limit)
             ->offset($offset)
             ->get();
@@ -77,14 +75,5 @@ class Crud_model extends CI_Model
             ));
         $query = $this->db->get();
         return $query->row();
-    }
-
-    function listingUser()
-    {
-        $this->db->select('tbl_user.*,
-                            tbl_user_role.role')
-            ->from('tbl_user')
-            ->join('tbl_user_role', 'tbl_user_role.id_role = tbl_user.id_role', 'LEFT');
-        return $this->db->get()->result();
     }
 }
