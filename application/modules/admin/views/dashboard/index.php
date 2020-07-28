@@ -9,7 +9,7 @@
         <div class="alert alert-success">
             <p>
                 <i class="fa fa-user"></i>
-                Selamat datang <?= $user->username ?> diaplikasi persediaan barang
+                Selamat datang <?= $user->username ?> di admin aplikasi Sistem Informasi Magang Sekda Jeneponto
             </p>
         </div>
     </div>

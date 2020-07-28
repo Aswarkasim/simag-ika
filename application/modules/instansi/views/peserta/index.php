@@ -8,6 +8,8 @@
 
         <p>
             <a href="<?= base_url($add) ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+            <a href="" class="btn btn-success"><i class="fa fa-excel"></i></a>
+
         </p>
 
         <table class="table DataTable">
@@ -29,7 +31,7 @@
                             <a href="<?= base_url('instansi/peserta/detail/' . $row->id_peserta) ?>"><strong><?= $row->username_peserta ?></strong></a><br>
                             <p><?= $row->username_peserta ?> - <?= $row->nohp ?></p>
                         </td>
-                        <td>98 <a href="<?= base_url('instansi/peserta/nilai/' . $row->id_peserta); ?>"> <i class="fa fa-edit"></i></a> </td>
+                        <td><?= $row->nilai ?> <a href="<?= base_url('instansi/peserta/nilai/' . $row->id_peserta); ?>"> <i class="fa fa-edit"></i></a> </td>
                         <td><?php if ($row->is_active == 1) {
                                 echo '<div class="label label-success">Aktif</div>';
                             } else {

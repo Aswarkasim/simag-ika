@@ -43,4 +43,52 @@ class Instansi_model extends CI_Model
     $this->db->where('id_peserta', $id_peserta)->where('id_aspek', $id_aspek);
     $this->db->update('tbl_penilaian', $data);
   }
+
+  function rerata()
+  {
+    return $this->db->query('SELECT ROUND(AVG (nilai)) as rerata FROM (tbl_penilaian)')->row();
+    //return $this->db->get()->row();
+  }
+
+  function cekAspek($id_peserta, $id_aspek)
+  {
+    $this->db->select('*')
+      ->from('tbl_penilaian')
+      ->where('id_peserta', $id_peserta)
+      ->where('id_aspek', $id_aspek);
+    return $this->db->get()->result();
+  }
+
+  public function listSurat($id_instansi, $limit, $offset)
+  {
+    $query = $this->db->select('*')
+      ->from('tbl_surat')
+      ->order_by('date_created', 'DESC')
+      ->where('id_instansi', $id_instansi)
+      ->limit($limit)
+      ->offset($offset)
+      ->get();
+    return $query->result();
+  }
+
+  public function cariSurat($id_instansi, $where)
+  {
+    $query = $this->db->select('*')
+      ->from('tbl_surat')
+      ->where('id_instansi', $id_instansi)
+      ->like('instansi_asal', $where)
+      ->limit(10)
+      ->get();
+    return $query->result();
+  }
+
+  function cekSurat($id_instansi)
+  {
+    $query = $this->db->select('*')
+      ->from('tbl_surat')
+      ->where('id_instansi', $id_instansi)
+      ->where('is_read', '0')
+      ->get();
+    return $query->result();
+  }
 }

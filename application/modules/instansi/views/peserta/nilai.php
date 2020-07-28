@@ -25,7 +25,7 @@
                   <label for="" class="pull-right"><?= $row->nama_aspek; ?></label>
                 </div>
                 <div class="col-md-9">
-                  <input type="text" name="aspek<?= $row->id_aspek . $row->nama_aspek ?>" value="<?= $row->nilai; ?>" required placeholder="<?= $row->nama_aspek; ?>" class="form-control">
+                  <input type="number" name="aspek<?= $row->id_aspek . $row->nama_aspek ?>" value="<?= $row->nilai; ?>" required placeholder="<?= $row->nama_aspek; ?>" class="form-control">
                 </div>
               </div>
             </div>
@@ -36,7 +36,8 @@
               <div class="col-md-3">
               </div>
               <div class="col-md-9">
-                <label for="">Rata-rata : </label>
+                <label for="">Rata-rata : <?= $rerata->rerata; ?></label>
+                <input type="hidden" name="nilai" value="<?= $rerata->rerata; ?>" id="">
               </div>
             </div>
           </div>

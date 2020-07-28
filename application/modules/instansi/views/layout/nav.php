@@ -1,8 +1,10 @@
 <?php
 
-$id_user = $this->session->userdata('id_user');
+$id_instansi = $this->session->userdata('id_instansi');
 $role = $this->session->userdata('role');
+$this->load->model('instansi/Instansi_model', 'IM');
 
+$jumlahSurat = count($this->IM->cekSurat($id_instansi));
 ?>
 
 <div class="conta">
@@ -23,6 +25,14 @@ $role = $this->session->userdata('role');
                         }
                         ?>"><a href="<?php echo base_url('instansi/dashboard')
                                         ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li class="<?php if ($this->uri->segment(2) == "surat") {
+                            echo "active";
+                        }
+                        ?>"><a href="<?php echo base_url('instansi/surat')
+                                        ?>"><i class="fa fa-envelope"></i> <span>Surat Masuk</span>
+                    <span class="pull-right-container">
+                        <span class="label label-primary pull-right"><?= $jumlahSurat; ?></span>
+                    </span></a></li>
 
             <li class="<?php if ($this->uri->segment(2) == "peserta") {
                             echo "active";

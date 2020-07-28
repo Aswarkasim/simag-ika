@@ -9,9 +9,9 @@ $user = $this->Crud_model->listingOne('tbl_user', 'id_user', $id_user);
     <!-- Logo -->
     <a href="#" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>F</b>W</span>
+        <!-- <span class="logo-mini"><b>F</b>W</span> -->
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>MY</b>FW</span>
+        <!-- <span class="logo-lg"><b>MY</b>FW</span> -->
     </a>
 
     <!-- Header Navbar -->

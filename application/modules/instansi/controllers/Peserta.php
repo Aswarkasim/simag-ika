@@ -36,20 +36,6 @@ class Peserta extends CI_Controller
       'is_active'     => $status
     ];
     $this->Crud_model->edit('tbl_peserta', 'id_peserta', $id_peserta, $data);
-
-    if ($status == 1) {
-      $id_instansi = $this->session->userdata('id_instansi');
-      $aspek = $this->Crud_model->listingOneAll('tbl_aspek', 'id_instansi', $id_instansi);
-      foreach ($aspek as $row) {
-        $dataNilai = [
-          'id_peserta' => $id_peserta,
-          'id_aspek'   => $row->id_aspek,
-          'nilai'      => 0
-        ];
-        $this->Crud_model->add('tbl_penilaian', $dataNilai);
-      }
-    }
-
     $this->session->set_flashdata('msg', 'diaktifkan');
     redirect('instansi/peserta', 'refresh');
   }
@@ -142,11 +128,26 @@ class Peserta extends CI_Controller
   public function nilai($id_peserta)
   {
     $id_instansi = $this->session->userdata('id_instansi');
-    $nilai = $this->IM->nilaiAspek($id_instansi, $id_peserta);
+    $aspek = $this->Crud_model->listingOneAll('tbl_aspek', 'id_instansi', $id_instansi);
+    foreach ($aspek as $row) {
+      $cek = $this->IM->cekAspek($id_peserta, $row->id_aspek);
+      if (!$cek) {
+        $dataNilai = [
+          'id_peserta' => $id_peserta,
+          'id_aspek'   => $row->id_aspek,
+          'nilai'      => 0
+        ];
+        $this->Crud_model->add('tbl_penilaian', $dataNilai);
+      }
+    }
 
+    $nilai = $this->IM->nilaiAspek($id_instansi, $id_peserta);
+    $rerata = $this->IM->rerata();
+    $this->updateRerata($id_peserta, $rerata->rerata);
     $data = [
       'add'       => 'instansi/peserta/updateNilai/' . $id_peserta,
       'back'       => 'instansi/peserta',
+      'rerata'    =>  $rerata,
       'nilai'      => $nilai,
       'content'   => 'instansi/peserta/nilai'
     ];
@@ -154,23 +155,29 @@ class Peserta extends CI_Controller
     $this->load->view('instansi/layout/wrapper', $data, FALSE);
   }
 
+  private function updateRerata($id_peserta, $nilaiRerata)
+  {
+    $dataNilai = [
+      'nilai' => $nilaiRerata
+    ];
+    $this->Crud_model->edit('tbl_peserta', 'id_peserta', $id_peserta, $dataNilai);
+  }
+
   function updateNilai($id_peserta)
   {
     $id_instansi = $this->session->userdata('id_instansi');
     $nilai = $this->IM->nilaiAspek($id_instansi, $id_peserta);
     $var = '';
-    //$rerata = "SELECT AVG(nilai) FROM(tbl_penilaian) WHERE id_peserta = '$id_peserta'";
 
     foreach ($nilai as $row) {
       $var = 'aspek' . $row->id_aspek . $row->nama_aspek;
 
       $data = [
-        //'rerata'  => $rerata,
         'nilai'   => $this->input->post($var)
       ];
       $this->IM->updateNilai($id_peserta, $row->id_aspek, $data);
     }
     $this->session->set_flashdata('msg', 'data diubah');
-    redirect('instansi/peserta');
+    redirect('instansi/peserta/nilai/' . $id_peserta);
   }
 }

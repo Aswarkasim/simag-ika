@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>dist/css/AdminLTE.min.css">
 
-  <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>dist/css/skins/skin-yellow.min.css">
+  <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>dist/css/skins/skin-blue.min.css">
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -34,5 +34,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </head>
 
-<body class="hold-transition skin-yellow sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
