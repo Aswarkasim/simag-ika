@@ -28,6 +28,25 @@ class Instansi_model extends CI_Model
     return $query->row();
   }
 
+  function listPeserta($id_instansi)
+  {
+    $this->db->select('tbl_peserta.*, tbl_pekerjaan.nama_pekerjaan')
+      ->from('tbl_peserta')
+      ->join('tbl_pekerjaan', 'tbl_pekerjaan.id_pekerjaan = tbl_peserta.id_pekerjaan', 'left')
+      ->where('tbl_peserta.id_instansi', $id_instansi);
+    return $this->db->get()->result();
+  }
+
+  function detailPeserta($id_peserta)
+  {
+    $this->db->select('tbl_peserta.*, tbl_pekerjaan.nama_pekerjaan, tbl_pembimbing.nama_pembimbing')
+      ->from('tbl_peserta')
+      ->join('tbl_pekerjaan', 'tbl_pekerjaan.id_pekerjaan = tbl_peserta.id_pekerjaan', 'left')
+      ->join('tbl_pembimbing', 'tbl_pembimbing.id_pembimbing = tbl_peserta.id_pembimbing', 'left')
+      ->where('tbl_peserta.id_peserta', $id_peserta);
+    return $this->db->get()->row();
+  }
+
   function nilaiAspek($id_instansi, $id_peserta)
   {
     $this->db->select('tbl_penilaian.*, tbl_aspek.nama_aspek')

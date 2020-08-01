@@ -9,7 +9,7 @@ class Profil extends CI_Controller
   public function index()
   {
     $data = [
-      'content' => 'home/profil/index'
+      'content' => 'home/home/profil'
     ];
     $this->load->view('home/layout/wrapper', $data);
   }

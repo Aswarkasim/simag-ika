@@ -40,18 +40,24 @@ $jumlahSurat = count($this->IM->cekSurat($id_instansi));
                         ?>"><a href="<?php echo base_url('instansi/peserta')
                                         ?>"><i class="fa fa-users"></i> <span>Peserta</span></a></li>
 
-            <li class="treeview <?php if ($this->uri->segment(2) == "user") {
+            <li class="treeview <?php if ($this->uri->segment(2) == "master") {
                                     echo "active";
                                 } ?>">
-                <a href="#"><i class="fa fa-file"></i> <span>Penilaian</span>
+                <a href="#"><i class="fa fa-file"></i> <span>Data Master</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="<?php if ($this->uri->segment(2) == "instansi") {
+                    <li class="<?php if ($this->uri->segment(3) == "pembimbing") {
                                     echo "active";
-                                } ?>"><a href="<?= base_url('instansi/aspek') ?>">Aspek</a></li>
+                                } ?>"><a href="<?= base_url('instansi/master/pembimbing') ?>">Pembimbing</a></li>
+                    <li class="<?php if ($this->uri->segment(3) == "pekerjaan") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('instansi/master/pekerjaan') ?>">Penugasan/Pekerjaan</a></li>
+                    <li class="<?php if ($this->uri->segment(3) == "aspek") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('instansi/master/aspek') ?>">Aspek</a></li>
 
                 </ul>
             </li>

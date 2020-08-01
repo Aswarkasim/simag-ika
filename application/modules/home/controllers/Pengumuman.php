@@ -9,7 +9,7 @@ class Pengumuman extends CI_Controller
   public function index()
   {
     $data = [
-      'content' => 'home/pengumuman/index'
+      'content' => 'home/home/pengumuman'
     ];
     $this->load->view('home/layout/wrapper', $data);
   }

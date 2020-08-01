@@ -12,26 +12,26 @@
         </button>
       </div>
 
-      <!-- <form action="<?= base_url('instansi/aspek/edit/' . $row->id_aspek); ?>" method="POST"> -->
+      <form action="<?= base_url('instansi/master/aspek/edit/' . $row->id_aspek); ?>" method="POST">
 
-      <input type="hidden" name="bantu" value="aa" id="">
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="">Nama Aspek</label>
-          <input type="text" value="<?= $row->nama_aspek; ?>" name="nama_aspek" required class="form-control">
+        <input type="hidden" name="bantu" value="aa" id="">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="">Nama Aspek</label>
+            <input type="text" value="<?= $row->nama_aspek; ?>" name="nama_aspek" required class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="">Keterangan</label>
+            <textarea name="keterangan" class="form-control" id="" required cols="20" rows="10"><?= $row->keterangan; ?></textarea>
+          </div>
+
         </div>
-
-        <div class="form-group">
-          <label for="">Keterangan</label>
-          <textarea name="keterangan" class="form-control" id="" required cols="20" rows="10"><?= $row->keterangan; ?></textarea>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
-      </div>
-      <!-- </form> -->
+        <!-- </form> -->
     </div>
   </div>
 </div>

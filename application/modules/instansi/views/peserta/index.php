@@ -8,7 +8,6 @@
 
         <p>
             <a href="<?= base_url($add) ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
-            <a href="" class="btn btn-success"><i class="fa fa-excel"></i></a>
 
         </p>
 
@@ -17,6 +16,7 @@
                 <tr>
                     <th width="40px">No</th>
                     <th>Nama Lengkap</th>
+                    <th width="">Penugasan</th>
                     <th width="100px">Nilai</th>
                     <th width="100px">Status</th>
                     <th width="200px">Tindakan</th>
@@ -29,9 +29,13 @@
                         <td><?= $no ?></td>
                         <td>
                             <a href="<?= base_url('instansi/peserta/detail/' . $row->id_peserta) ?>"><strong><?= $row->username_peserta ?></strong></a><br>
-                            <p><?= $row->username_peserta ?> - <?= $row->nohp ?></p>
+                            <p><?= $row->username_peserta ?> - <?= $row->id_peserta ?></p>
                         </td>
-                        <td><?= $row->nilai ?> <a href="<?= base_url('instansi/peserta/nilai/' . $row->id_peserta); ?>"> <i class="fa fa-edit"></i></a> </td>
+                        <td><?= $row->nama_pekerjaan; ?>
+
+                        </td>
+
+                        <td><?= $row->nilai ?></td>
                         <td><?php if ($row->is_active == 1) {
                                 echo '<div class="label label-success">Aktif</div>';
                             } else {
@@ -58,6 +62,7 @@
 
                         </td>
                     </tr>
+
                 <?php $no++;
                 } ?>
             </tbody>

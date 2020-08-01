@@ -50,6 +50,7 @@
                 <div class="form-group has-feedback">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
                 </div>
+                <span><a href="<?= base_url(); ?>"><i class="fa fa-globe"></i> Home</a> atau <a href="<?= base_url('admin/auth'); ?>"><i class="fa fa-globe"></i> Admin</a></span>
 
 
             </form>

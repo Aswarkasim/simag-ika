@@ -17,17 +17,35 @@ class Peserta extends CI_Controller
   public function index()
   {
     $id_instansi = $this->session->userdata('id_instansi');
-    $peserta = $this->Crud_model->listingOneAll('tbl_peserta', 'id_instansi', $id_instansi);
+    $peserta = $this->IM->listPeserta($id_instansi);
+
+    $penugasan = $this->Crud_model->listingOneAll('tbl_pekerjaan', 'id_instansi', $id_instansi);
     $data = [
       'add'      => 'instansi/peserta/add',
       'edit'      => 'instansi/peserta/edit/',
       'delete'      => 'instansi/peserta/delete/',
       'is_active'      => 'instansi/peserta/is_active/',
       'peserta'      => $peserta,
+      'penugasan'      => $penugasan,
       'content'   => 'instansi/peserta/index'
     ];
 
     $this->load->view('instansi/layout/wrapper', $data, FALSE);
+  }
+
+  function detail($id_peserta)
+  {
+    $id_instansi = $this->session->userdata('id_instansi');
+    $peserta = $this->IM->detailPeserta($id_peserta);
+    $pembimbing = $this->Crud_model->listingOneAll('tbl_pembimbing', 'id_instansi', $id_instansi);
+    $penugasan = $this->Crud_model->listingOneAll('tbl_pekerjaan', 'id_instansi', $id_instansi);
+    $data = [
+      'peserta' => $peserta,
+      'pembimbing' => $pembimbing,
+      'penugasan' => $penugasan,
+      'content'  => 'instansi/peserta/detail'
+    ];
+    $this->load->view('/layout/wrapper', $data, FALSE);
   }
 
   function is_active($id_peserta, $status)
@@ -146,7 +164,7 @@ class Peserta extends CI_Controller
     $this->updateRerata($id_peserta, $rerata->rerata);
     $data = [
       'add'       => 'instansi/peserta/updateNilai/' . $id_peserta,
-      'back'       => 'instansi/peserta',
+      'back'       => 'instansi/peserta/detail/' . $id_peserta,
       'rerata'    =>  $rerata,
       'nilai'      => $nilai,
       'content'   => 'instansi/peserta/nilai'
@@ -179,5 +197,25 @@ class Peserta extends CI_Controller
     }
     $this->session->set_flashdata('msg', 'data diubah');
     redirect('instansi/peserta/nilai/' . $id_peserta);
+  }
+
+  function editPenugasan($id_peserta)
+  {
+    $data = [
+      'id_pekerjaan' => $this->input->post('id_pekerjaan')
+    ];
+    $this->Crud_model->edit('tbl_peserta', 'id_peserta', $id_peserta, $data);
+    $this->session->set_flashdata('msg', 'Penugasan diubah');
+    redirect('instansi/peserta/detail/' . $id_peserta, 'refresh');
+  }
+
+  function editPembimbing($id_peserta)
+  {
+    $data = [
+      'id_pembimbing' => $this->input->post('id_pembimbing')
+    ];
+    $this->Crud_model->edit('tbl_peserta', 'id_peserta', $id_peserta, $data);
+    $this->session->set_flashdata('msg', 'Pembimbing diubah');
+    redirect('instansi/peserta/detail/' . $id_peserta, 'refresh');
   }
 }

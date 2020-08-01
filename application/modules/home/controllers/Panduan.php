@@ -9,7 +9,7 @@ class Panduan extends CI_Controller
   public function index()
   {
     $data = [
-      'content' => 'home/panduan/index'
+      'content' => 'home/home/panduan'
     ];
     $this->load->view('home/layout/wrapper', $data);
   }

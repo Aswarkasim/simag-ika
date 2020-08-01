@@ -2352,16 +2352,7 @@ ul {
 
 /**************** banner part css start ****************/
 /* line 2, E:/166 Basketball/Basketball_Template/sass/_banner.scss */
-.banner_part {
-	height: 800px;
-	display: flex;
-	align-items: center;
-	position: relative;
-	background-image: url("../img/banner_bg.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+
 
 @media (max-width: 576px) {
 

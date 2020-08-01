@@ -22,7 +22,7 @@ class Aspek extends CI_Controller
 
     $data = [
       'title'     => 'Tambah Peserta',
-      'add'       => 'instansi/aspek/add',
+      'add'       => 'instansi/master/aspek/add',
       'aspek'   => $aspek,
       'content'   => 'instansi/aspek/index'
     ];
@@ -40,7 +40,7 @@ class Aspek extends CI_Controller
     ];
     $this->Crud_model->add('tbl_aspek', $data);
     $this->session->set_flashdata('msg', 'aspek ditambah');
-    redirect('instansi/aspek', 'refresh');
+    redirect('instansi/master/aspek', 'refresh');
   }
 
   function edit($id_aspek)
@@ -54,14 +54,14 @@ class Aspek extends CI_Controller
     ];
     $this->Crud_model->edit('tbl_aspek', 'id_aspek', $id_aspek, $data);
     $this->session->set_flashdata('msg', 'data diubah');
-    redirect('instansi/aspek', 'refresh');
+    redirect('instansi/master/aspek', 'refresh');
   }
 
   function delete($id_aspek)
   {
     $this->Crud_model->delete('tbl_aspek', 'id_aspek', $id_aspek);
     $this->session->set_flashdata('msg', 'dihapus');
-    redirect('instansi/aspek');
+    redirect('instansi/master/aspek');
   }
 
   function printLogbook()
