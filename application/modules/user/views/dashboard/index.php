@@ -26,10 +26,10 @@
                     <hr>
                     <h4 class="card-text text-white">
                         <strong> <?php
-                                    if ($peserta->pembimbing == '') {
+                                    if ($peserta->id_pembimbing == '') {
                                         echo 'Belum ada pembimbing';
                                     } else {
-                                        echo $peserta->pembimbing;
+                                        echo $peserta->nama_pembimbing;
                                     }
                                     ?></strong>
                     </h4>

@@ -21,7 +21,7 @@ class Dashboard extends CI_Controller
         $instansi = $this->Crud_model->listingOne('tbl_instansi', 'id_instansi', $id_instansi);
 
         $id_peserta = $this->session->userdata('id_peserta');
-        $peserta = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $id_peserta);
+        $peserta = $this->UM->dataPeserta($id_peserta);
 
         $logbook = $this->Crud_model->listingOneAll('tbl_logbook', 'id_peserta', $id_peserta);
 
