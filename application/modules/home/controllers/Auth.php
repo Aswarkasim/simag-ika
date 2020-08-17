@@ -44,7 +44,7 @@ class Auth extends CI_Controller
           $s->set_userdata('username_peserta', $cek_login->username_peserta);
           $s->set_userdata('id_instansi_peserta', $cek_login->id_instansi);
           $s->set_userdata('namalengkap', $cek_login->namalengkap);
-          redirect('home', 'refresh');
+          redirect('user/dashboard', 'refresh');
         } else {
           $data = array(
             'error'     => 'Akun anda belum aktif. Silakan hubungi admin bagian untuk mengaktifkan akun',
@@ -94,7 +94,7 @@ class Auth extends CI_Controller
         'email'             => $i->post('email'),
         'id_instansi'       => $i->post('id_instansi'),
         'password'          => sha1($i->post('password')),
-        'is_active'         =>  0,
+        'is_active'         =>  1,
       ];
       $this->Crud_model->add('tbl_peserta', $data);
       $this->session->set_flashdata('msg', 'ditambah');
