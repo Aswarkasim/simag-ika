@@ -43,7 +43,7 @@ $peserta = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $id_pesert
       </ul>
 
       <form class="form-inline my-2 my-lg-0">
-        <a href="<?= base_url('home/surat'); ?>" class="mr-2 btn btn-warning text-white"><i class="fa fa-envelope"></i> Kirim Surat</a>
+        <!-- <a href="<?= base_url('home/surat'); ?>" class="mr-2 btn btn-warning text-white"><i class="fa fa-envelope"></i> Kirim Surat</a> -->
         <?php if ($this->session->userdata('id_peserta')) { ?>
           <a href="<?= base_url('user/dashboard'); ?>" class="ml-2 btn btn-warning text-white"><i class="fa fa-user"></i> <?= $peserta->namalengkap; ?></a>
         <?php } else { ?>

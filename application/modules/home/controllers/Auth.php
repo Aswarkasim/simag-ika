@@ -109,6 +109,6 @@ class Auth extends CI_Controller
     $s->unset_userdata('username_peserta');
     $s->unset_userdata('namalengkap');
     $s->unset_userdata('id_instansi_peserta');
-    redirect(base_url('home'), 'refresh');
+    redirect(base_url('home/auth'), 'refresh');
   }
 }

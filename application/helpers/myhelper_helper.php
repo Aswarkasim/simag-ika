@@ -25,12 +25,12 @@ function is_logged_in_admin()
 }
 
 
-function is_logged_in_panitia()
+function is_logged_in_peserta()
 {
     $ci = get_instance();
-    if ($ci->session->userdata('id_panitia') == '') {
+    if ($ci->session->userdata('id_peserta') == '') {
 
-        redirect('home', 'refresh');
+        redirect('home/auth', 'refresh');
     }
 }
 

@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user/User_model', 'UM');
+        is_logged_in_peserta();
     }
 
 
