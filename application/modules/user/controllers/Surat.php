@@ -11,7 +11,7 @@ class Surat extends CI_Controller
     $instansi = $this->Crud_model->listing('tbl_instansi');
     $data = [
       'instansi' => $instansi,
-      'content' => 'home/surat/index'
+      'content' => 'user/surat/index'
     ];
     $this->load->view('home/layout/wrapper', $data);
   }
@@ -20,8 +20,7 @@ class Surat extends CI_Controller
   {
     $i = $this->input;
     $valid = $this->form_validation;
-    $valid->set_rules('instansi_asal', 'Instansi Asal', 'required', ['required' => '%s tidak boleh kosong']);
-    $valid->set_rules('kontak', 'Kontak', 'required', ['required' => '%s tidak boleh kosong']);
+    $valid->set_rules('deskripsi', 'Deskripsi', 'required', ['required' => '%s tidak boleh kosong']);
 
 
     if ($valid->run()) {
@@ -33,21 +32,20 @@ class Surat extends CI_Controller
         if (!$this->upload->do_upload('dokumen')) {
           $data = [
             'error'     => $this->upload->display_errors(),
-            'content' => 'home/surat/index'
+            'content' => 'user/surat/index'
           ];
-          $this->load->view('home/layout/wrapper', $data, FALSE);
+          $this->load->view('user/layout/wrapper', $data, FALSE);
         } else {
           $upload_data = ['uploads' => $this->upload->data()];
           $data = [
-            'id_instansi'   => $i->post('id_instansi'),
-            'instansi_asal'   => $i->post('instansi_asal'),
-            'kontak'   => $i->post('kontak'),
-            'deskripsi'   => $i->post('deskripsi'),
-            'dokumen'        => $config['upload_path'] . $upload_data['uploads']['file_name']
+            'id_instansi'     => $this->session->userdata('id_instansi_peserta'),
+            'id_peserta'      => $this->session->userdata('id_peserta'),
+            'deskripsi'       => $i->post('deskripsi'),
+            'dokumen'         => $config['upload_path'] . $upload_data['uploads']['file_name']
           ];
           $this->Crud_model->add('tbl_surat', $data);
           $this->session->set_flashdata('msg', 'Surat dikirim. Silakan tunggu  konfirmasi dihalaman pengumuman');
-          redirect('home/surat');
+          redirect('user/surat');
         }
       }
     }

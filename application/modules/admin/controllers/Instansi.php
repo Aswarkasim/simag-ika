@@ -33,9 +33,9 @@ class Instansi extends CI_Controller
 
     function add()
     {
-        
+
         $this->load->helper('string');
-        
+
 
         $valid = $this->form_validation;
 
@@ -62,7 +62,7 @@ class Instansi extends CI_Controller
                 'is_active'             => $i->post('is_active')
             ];
             $this->Crud_model->add('tbl_instansi', $data);
-            $this->session->set_flashdata('msg', $data['nama_instansi'].' ditambah');
+            $this->session->set_flashdata('msg', $data['nama_instansi'] . ' ditambah');
             redirect('admin/instansi/add', 'refresh');
         }
     }
@@ -117,17 +117,30 @@ class Instansi extends CI_Controller
         redirect('admin/instansi');
     }
 
-    public function role()
+
+    function detail($id_instansi)
     {
-        $role = $this->Crud_model->listing('tbl_instansi_role');
+        $instasi = $this->Crud_model->listingOne('tbl_instansi', 'id_instansi', $id_instansi);
         $data = [
-            'add'       => 'roleAdd',
-            'edit'      => 'roleEdit/',
-            'delete'    => 'roleDelete/',
-            'role'      => $role,
-            'content'   => 'admin/role/index'
+            'instansi'  => $instasi,
+            'content'   => 'admin/instansi/detail'
         ];
         $this->load->view('admin/layout/wrapper', $data, FALSE);
     }
 
+
+    function auth($id_instansi)
+    {
+        $instansi = $this->Crud_model->listingOne('tbl_instansi', 'id_instansi', $id_instansi);
+        if ($this->session->userdata('id_instansi') != null) {
+            session_destroy();
+        } else {
+            $s = $this->session;
+            $s->set_userdata('id_instansi', $instansi->id_instansi);
+            $s->set_userdata('nama_instansi', $instansi->nama_instansi);
+            $s->set_userdata('username_instansi', $instansi->username_instansi);
+
+            redirect(base_url('instansi/dashboard'), 'refresh');
+        }
+    }
 }

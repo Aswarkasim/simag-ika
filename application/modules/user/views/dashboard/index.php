@@ -22,7 +22,7 @@
     <div class="row">
 
         <div class="col-md-3">
-            <a href="">
+            <a href="<?= base_url('user/surat'); ?>">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -44,7 +44,7 @@
         </div>
 
         <div class="col-md-3">
-            <a href="">
+            <a href="<?= base_url('user/dashboard/pengumuman'); ?>">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -67,7 +67,7 @@
 
 
         <div class="col-md-3">
-            <a href="">
+            <a href="<?= base_url('user/dashboard/penerimaan'); ?>">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -90,7 +90,7 @@
 
 
         <div class="col-md-3">
-            <a href="">
+            <a href="<?= base_url('user/logbook'); ?>" target="_blank">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -112,7 +112,7 @@
         </div>
 
         <div class="col-md-3">
-            <a href="">
+            <a href="<?= base_url('user/laporan/index'); ?>">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -134,7 +134,7 @@
         </div>
 
         <div class="col-md-3">
-            <a href="">
+            <a href="<?= base_url('user/dashboard/nilai'); ?>">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <div class="row">

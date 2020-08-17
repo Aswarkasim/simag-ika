@@ -4,9 +4,14 @@
 // print_r($logbook);
 ?>
 
+
 <div class="container">
-  <?php $this->load->view('user/nav'); ?>
+
+
+
+  <!-- <?php// $this->load->view('user/nav'); ?> -->
   <div class="row">
+    <a href="<?= base_url(); ?>" class="btn btn-success ml-1"><i class="fa fa-arrow-left"></i> Kembali</a>
     <div class="col-md-12">
       <br>
 

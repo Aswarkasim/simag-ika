@@ -1,4 +1,11 @@
 <section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <a href="<?= base_url(); ?>" class="btn btn-success ml-1"><i class="fa fa-arrow-left"></i> Kembali</a>
+    </div>
+  </div>
+  <br>
+
   <h2><b>Kirim Surat</b></h2>
 
   <div class="row">
@@ -14,7 +21,7 @@
         echo '<div class="alert alert-warning">' . $error . '</div>';
       }
 
-      echo form_open_multipart('home/surat/kirim')
+      echo form_open_multipart('user/surat/kirim')
       ?>
 
       <div class="row">
@@ -24,26 +31,7 @@
             <input type="text" class="form-control" name="instansi_asal" placeholder="SMKN 1 Jeneponto">
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="">Kontak</label>
-            <input type="text" class="form-control" name="kontak" placeholder="Contoh: 085238730727">
-          </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="">Instansi Tujuan</label>
-            <select name="id_instansi" class="form-control" id="">
-              <option value="">-- Instansi Tujuan --</option>
-              <?php foreach ($instansi as $row) { ?>
-                <option value="<?= $row->id_instansi ?>"><?= $row->nama_instansi; ?></option>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="">Dokumen Surat</label>
@@ -51,6 +39,7 @@
             <small>Hanya dapat menerima format .*pdf</small>
           </div>
         </div>
+
       </div>
 
       <div class="row">

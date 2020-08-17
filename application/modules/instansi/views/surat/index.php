@@ -53,8 +53,8 @@ $this->load->helper('string');
                                                                         } else {
                                                                           echo 'fa-envelope not-read-data';
                                                                         } ?>"></i></a></td>
-                      <td class="mailbox-name"><a href="<?= base_url('instansi/surat/detail/' . $row->id_surat); ?>"><?= $row->instansi_asal; ?></a></td>
-                      <td class="mailbox-subject"><?= character_limiter($row->deskripsi, 50); ?></td>
+                      <td class="mailbox-name"><a href="<?= base_url('instansi/surat/detail/' . $row->id_surat); ?>"><?= $row->namalengkap; ?></a></td>
+                      <td class="mailbox-subject"><?= $row->asal_instansi; ?></td>
                       <td class="mailbox-attachment"></td>
                       <td class="mailbox-date"><?= format_indo($row->date_created); ?></td>
                       <td><a href="<?= base_url('instansi/surat/delete/' . $row->id_surat); ?>" class="tombol-hapus"><i class="fa fa-trash"></i></a></td>

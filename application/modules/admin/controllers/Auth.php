@@ -8,6 +8,9 @@ class Auth extends CI_Controller
 
     public function index()
     {
+        // if ((session_id('id_peserta') != null) || session_id('id_instansi') != null) {
+        //     session_destroy();
+        // }
         $valid = $this->form_validation;
 
         $valid->set_rules(

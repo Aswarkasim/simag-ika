@@ -80,14 +80,25 @@ class Instansi_model extends CI_Model
 
   public function listSurat($id_instansi, $limit, $offset)
   {
-    $query = $this->db->select('*')
+    $query = $this->db->select('tbl_surat.*, tbl_peserta.namalengkap, tbl_peserta.asal_instansi')
       ->from('tbl_surat')
-      ->order_by('date_created', 'DESC')
-      ->where('id_instansi', $id_instansi)
+      ->join('tbl_peserta', 'tbl_peserta.id_peserta = tbl_surat.id_peserta', 'left')
+      ->where('tbl_surat.id_instansi', $id_instansi)
+      ->order_by('tbl_surat.date_created', 'DESC')
       ->limit($limit)
       ->offset($offset)
       ->get();
     return $query->result();
+  }
+
+  public function getDetailSurat($id_surat)
+  {
+    $query = $this->db->select('tbl_surat.*, tbl_peserta.*')
+      ->from('tbl_surat')
+      ->join('tbl_peserta', 'tbl_peserta.id_peserta = tbl_surat.id_peserta', 'left')
+      ->where('tbl_surat.id_surat', $id_surat)
+      ->get();
+    return $query->row();
   }
 
   public function cariSurat($id_instansi, $where)

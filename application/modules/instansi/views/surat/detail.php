@@ -2,17 +2,45 @@
   <div class="box box-primary">
     <div class="box-header with-border">
       <a href="<?= base_url('instansi/surat'); ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Kembali</a><br><br>
-      <h3 class="box-title">Pesan dari <?= $surat->instansi_asal; ?></h3>
+      <h3 class="box-title">Pesan dari <?= $surat->asal_instansi; ?></h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body no-padding">
       <div class="mailbox-read-info">
-        <h3> <?= $surat->instansi_asal; ?></h3>
-        <h5> <?= $surat->kontak; ?>
-          <span class="mailbox-read-time pull-right"><?= format_indo($surat->date_created) ?></span></h5>
+        <h3> <?= $surat->asal_instansi; ?></h3>
+
+        <span class="mailbox-read-time pull-right"><?= format_indo($surat->date_created) ?></span></h5>
       </div>
 
+
       <div class="mailbox-read-message">
+        <table class="table">
+          <tr>
+            <td width="200px">Nama</td>
+            <td>: <?= $surat->namalengkap; ?></td>
+          </tr>
+          <tr>
+            <td width="200px">Tempat Lahir</td>
+            <td>: <?= $surat->tempat_lahir; ?></td>
+          </tr>
+          <tr>
+            <td width="200px">Jenis Kelamin</td>
+            <td>: <?= $surat->jenis_kelamin; ?></td>
+          </tr>
+          <tr>
+            <td width="200px">Kontak</td>
+            <td>: <?= $surat->nohp; ?></td>
+          </tr>
+          <tr>
+            <td width="200px">Alamat</td>
+            <td>: <?= $surat->alamat; ?></td>
+          </tr>
+          <tr>
+            <td width="200px">Asal Instansi</td>
+            <td>: <?= $surat->asal_instansi; ?></td>
+          </tr>
+
+        </table>
         <?= $surat->deskripsi; ?>
       </div>
       <!-- /.mailbox-read-message -->

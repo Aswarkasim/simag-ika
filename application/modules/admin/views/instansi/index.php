@@ -26,7 +26,7 @@
                     <tr>
                         <td><?= $no ?></td>
                         <td>
-                            <strong><?= $row->username_instansi ?></strong><br>
+                            <a href="<?= base_url('admin/instansi/detail/' . $row->id_instansi) ?>"><strong><?= $row->username_instansi ?></strong><br></a>
                         </td>
                         <td><?= $row->nama_instansi ?></td>
                         <td><?php if ($row->is_active == 1) {
@@ -58,5 +58,3 @@
     </div>
     <!-- /.box-body -->
 </div>
-
-

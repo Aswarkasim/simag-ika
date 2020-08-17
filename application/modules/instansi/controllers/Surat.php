@@ -51,8 +51,11 @@ class Surat extends CI_Controller
 
   function detail($id_surat)
   {
+
+    $this->load->model('Instansi_model', 'IM');
+
     is_read('tbl_surat', 'id_surat', $id_surat);
-    $surat = $this->Crud_model->listingOne('tbl_surat', 'id_surat', $id_surat);
+    $surat = $this->IM->getDetailSurat($id_surat);
     $data = [
       'surat'     => $surat,
       'content'   => 'instansi/surat/detail'
@@ -64,7 +67,7 @@ class Surat extends CI_Controller
 
   {
     $this->load->helper('download');
-    $surat = $this->Crud_model->listingOne('tbl_surat', 'id_surat', '1');
+    $surat = $this->Crud_model->listingOne('tbl_surat', 'id_surat', $id_surat);
     force_download($surat->dokumen, null);
 
     redirect('instansi/surat/detail/' . $id_surat, 'refresh');
