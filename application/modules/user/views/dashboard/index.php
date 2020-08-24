@@ -156,15 +156,15 @@
         </div>
 
         <div class="col-md-3">
-            <a href="">
+            <a href="<?= base_url('user/profil'); ?>">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3">
-                                <i class="fa fa-building fa-3x"></i>
+                                <i class="fa fa-user fa-3x"></i>
                             </div>
                             <div class="col-md-9">
-                                <p class="text-white"><strong> PROFIL INSTANSI</strong></p>
+                                <p class="text-white"><strong> PROFIL</strong></p>
                                 <hr>
                                 <h4 class="card-text text-white">
                             </div>

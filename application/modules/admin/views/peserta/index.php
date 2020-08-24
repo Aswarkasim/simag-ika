@@ -15,6 +15,7 @@
                 <tr>
                     <th width="40px">No</th>
                     <th>Nama Lengkap</th>
+                    <th width="100px">Instansi</th>
                     <th width="100px">Status</th>
                     <th width="200px">Tindakan</th>
                 </tr>
@@ -25,9 +26,10 @@
                     <tr>
                         <td><?= $no ?></td>
                         <td>
-                            <strong><?= $row->username_peserta ?></strong><br>
+                            <a href="<?= base_url('admin/peserta/detail/' . $row->id_peserta); ?>"><strong><?= $row->username_peserta ?></strong></a><br>
                             <p><?= $row->username_peserta ?> - <?= $row->nohp ?></p>
                         </td>
+                        <td><?= $row->nama_instansi; ?></td>
                         <td><?php if ($row->is_active == 1) {
                                 echo '<div class="label label-success">Aktif</div>';
                             } else {

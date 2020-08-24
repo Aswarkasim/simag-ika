@@ -70,6 +70,11 @@
         <button type="button" class="btn btn-default"><i class="fa fa-share"></i> Forward</button>
       </div> -->
       <a href="<?= base_url('instansi/surat/delete/' . $surat->id_surat); ?>" class="btn btn-default tombol-hapus"><i class="fa fa-trash-o"></i> Hapus</a>
+      <?php if ($peserta->is_accept != 'diterima') { ?>
+        <a class="btn btn-success" href="<?= base_url('instansi/surat/is_accept/' . $peserta->id_peserta . '/' . $surat->id_surat  . '/diterima')  ?>"><i class="fa fa-thumbs-o-up"></i> Terima</a>
+      <?php } else { ?>
+        <a class="btn btn-danger" href="<?= base_url('instansi/surat/is_accept/' . $peserta->id_peserta . '/' . $surat->id_surat  . '/ditolak')  ?>"><i class="fa fa-thumbs-o-down"></i>Batal Terima</a>
+      <?php } ?>
       <!-- <button type="button" class="btn btn-default"><i class="fa fa-print"></i> Print</button> -->
     </div>
     <!-- /.box-footer -->

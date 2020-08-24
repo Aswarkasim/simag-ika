@@ -13,7 +13,7 @@
                 echo validation_errors('<div class="alert alert-warning"><i class="fa fa-warning"></i> ', '</div>');
                 ?>
 
-                <form action="<?= base_url($edit . $user->id_user) ?>" method="post">
+                <form action="<?= base_url($edit . $peserta->id_peserta) ?>" method="post">
 
                     <div class="form-group">
                         <div class="row">
@@ -21,7 +21,7 @@
                                 <label for="" class="pull-right">Nama</label>
                             </div>
                             <div class="col-md-9">
-                                <input value="<?= $user->username ?>" type="text" name="username" class="form-control">
+                                <input value="<?= $peserta->username_peserta ?>" type="text" name="username" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                 <label for="" class="pull-right">Email</label>
                             </div>
                             <div class="col-md-9">
-                                <input type="text" value="<?= $user->email ?>" name="email" class="form-control">
+                                <input type="text" value="<?= $peserta->email ?>" name="email" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -40,22 +40,21 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-3">
-                                <label for="" class="pull-right">Role</label>
+                                <label for="" class="pull-right">Instansi</label>
                             </div>
                             <div class="col-md-9">
-                                <select name="role" class="form-control">
-                                    <option value="none">--Role--</option>
-                                    <option value="User" <?php if ($user->role == "User") {
-                                                                echo "selected";
-                                                            } ?>>User</option>
-                                    <option value="Admin" <?php if ($user->role == "Admin") {
-                                                                echo "selected";
-                                                            } ?>>Admin</option>
+                                <select name="id_instansi" class="form-control">
+                                    <option value="none">--Instansi--</option>
+                                    <?php foreach ($instansi as $row) { ?>
+                                        <option value="<?= $row->id_instansi; ?>" <?php if ($row->id_instansi == $peserta->id_instansi) {
+                                                                                        echo "selected";
+                                                                                    } ?>><?= $row->nama_instansi; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="row">
                             <div class="col-md-3">
                                 <label for="" class="pull-right">Status</label>
@@ -63,16 +62,16 @@
                             <div class="col-md-9">
                                 <select name="is_aktif" class="form-control">
                                     <option value="none">--Status--</option>
-                                    <option value="0" <?php if ($user->is_active == "0") {
+                                    <option value="0" <?php if ($peserta->is_active == "0") {
                                                             echo "selected";
                                                         } ?>>Tidak Aktif</option>
-                                    <option value="1" <?php if ($user->is_active == "1") {
+                                    <option value="1" <?php if ($peserta->is_active == "1") {
                                                             echo "selected";
                                                         } ?>>Aktif</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <div class="row">
@@ -103,7 +102,7 @@
                             </div>
                             <div class="col-md-9">
                                 <a href="<?= base_url($back) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
-                                <button type="submit" class="btn btn-primary">Tambah</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                         </div>
                     </div>

@@ -25,6 +25,7 @@ class Peserta extends CI_Controller
       'edit'      => 'instansi/peserta/edit/',
       'delete'      => 'instansi/peserta/delete/',
       'is_active'      => 'instansi/peserta/is_active/',
+      'is_accept'      => 'instansi/peserta/is_accept/',
       'peserta'      => $peserta,
       'penugasan'      => $penugasan,
       'content'   => 'instansi/peserta/index'
@@ -39,13 +40,23 @@ class Peserta extends CI_Controller
     $peserta = $this->IM->detailPeserta($id_peserta);
     $pembimbing = $this->Crud_model->listingOneAll('tbl_pembimbing', 'id_instansi', $id_instansi);
     $penugasan = $this->Crud_model->listingOneAll('tbl_pekerjaan', 'id_instansi', $id_instansi);
+
+    $laporan = $this->Crud_model->listingOne('tbl_laporan', 'id_peserta', $id_peserta);
     $data = [
       'peserta' => $peserta,
       'pembimbing' => $pembimbing,
       'penugasan' => $penugasan,
+      'laporan'     => $laporan,
       'content'  => 'instansi/peserta/detail'
     ];
     $this->load->view('/layout/wrapper', $data, FALSE);
+  }
+
+  function download_laporan($id_peserta)
+  {
+    $laporan = $this->Crud_model->listingOne('tbl_laporan', 'id_peserta', $id_peserta);
+    $this->load->helper('download');
+    force_download($laporan->dokumen, null);
   }
 
   function is_active($id_peserta, $status)
@@ -59,6 +70,15 @@ class Peserta extends CI_Controller
   }
 
 
+  function is_accept($id_peserta, $status)
+  {
+    $data = [
+      'is_accept'     => $status
+    ];
+    $this->Crud_model->edit('tbl_peserta', 'id_peserta', $id_peserta, $data);
+    $this->session->set_flashdata('msg', 'diaktifkan');
+    redirect('instansi/peserta', 'refresh');
+  }
 
   function add()
   {
@@ -217,5 +237,26 @@ class Peserta extends CI_Controller
     $this->Crud_model->edit('tbl_peserta', 'id_peserta', $id_peserta, $data);
     $this->session->set_flashdata('msg', 'Pembimbing diubah');
     redirect('instansi/peserta/detail/' . $id_peserta, 'refresh');
+  }
+
+  function logbook($id_peserta)
+  {
+    $logbook = $this->Crud_model->listingOneAll('tbl_logbook', 'id_peserta', $id_peserta);
+    $peserta = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $id_peserta)->namalengkap;
+    $data = [
+      'logbook' => $logbook,
+      'peserta' => $peserta,
+      'content'   => 'instansi/peserta/logbook'
+    ];
+    $this->load->view('/layout/wrapper', $data, FALSE);
+  }
+
+  function delete_logbook()
+  {
+    $id_peserta = $this->uri->segment(4);
+    $id_logbook = $this->uri->segment(5);
+    $this->Crud_model->delete('tbl_logbook', 'id_logbook', $id_logbook);
+    $this->session->set_flashdata('msg', 'dihapus');
+    redirect('instansi/peserta/logbook/' . $id_peserta);
   }
 }

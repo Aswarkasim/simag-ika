@@ -13,7 +13,6 @@
       </div>
 
       <form action="<?= base_url('instansi/master/aspek/edit/' . $row->id_aspek); ?>" method="POST">
-
         <input type="hidden" name="bantu" value="aa" id="">
         <div class="modal-body">
           <div class="form-group">
@@ -31,7 +30,7 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
           <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
-        <!-- </form> -->
+      </form>
     </div>
   </div>
 </div>

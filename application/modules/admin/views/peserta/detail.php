@@ -53,28 +53,33 @@
           <tr>
             <td align="right">Pembimbing</td>
             <td>: <?= $peserta->nama_pembimbing; ?>
-              <a data-toggle="modal" data-target="#exampleModalCenterEdit<?= $peserta->id_peserta ?>">
+              <!-- <a data-toggle="modal" data-target="#exampleModalCenterEdit<?= $peserta->id_peserta ?>">
                 <i class="fa fa-edit"></i>
-              </a>
+              </a> -->
             </td>
           </tr>
           <tr>
             <td align="right">Penugasan</td>
             <td>: <?= $peserta->nama_pekerjaan; ?>
-              <a data-toggle="modal" data-target="#exampleModalCenterEditPenugasan<?= $peserta->id_peserta ?>">
+              <!-- <a data-toggle="modal" data-target="#exampleModalCenterEditPenugasan<?= $peserta->id_peserta ?>">
                 <i class="fa fa-edit"></i>
-              </a>
+              </a> -->
             </td>
           </tr>
 
           <tr>
             <td align="right">Nilai</td>
-            <td>: <?= $peserta->nilai; ?> <a href="<?= base_url('instansi/peserta/nilai/' . $peserta->id_peserta); ?>"> <i class="fa fa-edit"></i></a></td>
+            <td>:
+              <?= $peserta->nilai; ?> <a href="<?= base_url('instansi/peserta/nilai/' . $peserta->id_peserta); ?>">
+                <!-- <i class="fa fa-edit"></i></a> -->
+            </td>
           </tr>
 
           <tr>
             <td align="right">Logbook</td>
-            <td>: <a href="<?= base_url('instansi/peserta/logbook/' . $peserta->id_peserta); ?>"> <i class="fa fa-spinner"></i> Lihat Logbook</a></td>
+            <td>:
+              <!-- <a href="<?= base_url('instansi/peserta/logbook/' . $peserta->id_peserta); ?>">
+                <i class="fa fa-spinner"></i> Lihat Logbook</a></td> -->
           </tr>
 
           <tr>
@@ -93,8 +98,8 @@
           </tr>
 
 
-          <?php include('pembimbing.php');
-          include('pekerjaan.php') ?>
+          <?php// include('pembimbing.php');
+          //include('pekerjaan.php') ?>
 
         </table>
       </div>

@@ -36,10 +36,12 @@
                         </td>
 
                         <td><?= $row->nilai ?></td>
-                        <td><?php if ($row->is_active == 1) {
-                                echo '<div class="label label-success">Aktif</div>';
+                        <td><?php if ($row->is_accept == 'diterima') {
+                                echo '<div class="label label-success">diterima</div>';
+                            } else if ($row->is_accept == 'ditolak') {
+                                echo '<div class="label label-danger">ditolak</div>';
                             } else {
-                                echo '<div class="label label-danger">Tidak Aktif</div>';
+                                echo '<div class="label label-warning">pending</div>';
                             } ?></td>
                         <td>
                             <div class="btn-group">
@@ -49,11 +51,16 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                    <?php if ($row->is_active == '1') { ?>
+                                    <?php if ($row->is_accept != 'diterima') { ?>
+                                        <li><a href="<?= base_url($is_accept . $row->id_peserta . '/diterima')  ?>"><i class="fa fa-thumbs-o-up"></i> Terima</a></li>
+                                    <?php } else { ?>
+                                        <li><a href="<?= base_url($is_accept . $row->id_peserta . '/ditolak')  ?>"><i class="fa fa-thumbs-o-down"></i>Batal Terima</a></li>
+                                    <?php } ?>
+                                    <!-- <?php if ($row->is_active == '1') { ?>
                                         <li><a href="<?= base_url($is_active . $row->id_peserta . '/0')  ?>"><i class="fa fa-power-off"></i> Non-Aktifkan</a></li>
                                     <?php } else { ?>
                                         <li><a href="<?= base_url($is_active . $row->id_peserta . '/1')  ?>"><i class="fa fa-power-off"></i> Aktifkan</a></li>
-                                    <?php } ?>
+                                    <?php } ?> -->
                                     <li><a href="<?= base_url($edit . $row->id_peserta)  ?>"><i class="fa fa-edit"></i> Edit</a></li>
                                     <li><a class="tombol-hapus" href="<?= base_url($delete . $row->id_peserta)  ?>"><i class="fa fa-trash"></i> Hapus</a></li>
                                 </ul>

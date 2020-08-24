@@ -45,6 +45,8 @@ class Aspek extends CI_Controller
 
   function edit($id_aspek)
   {
+    // print_r($id_aspek);
+    // die;
     $id_instansi = $this->session->userdata('id_instansi');
     $i = $this->input;
     $data = [

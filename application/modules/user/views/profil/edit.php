@@ -1,6 +1,8 @@
-<?php $this->load->view('user/headprofil'); ?>
-<div class="container pt-0">
-    <?php $this->load->view('user/nav');
+<?php //$this->load->view('user/headprofil'); 
+?>
+<div class="container pt-4">
+    <a href="<?= base_url('user/profil'); ?>" class="btn btn-success"><i class="fa fa-arrow-left"></i><i></i> Kembali</a>
+    <?php //$this->load->view('user/nav');
 
     if (isset($error)) {
         echo $error;
@@ -60,13 +62,25 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-3">
-                            <b><label class="pull-right">No Hp</label></b>
+                            <b><label class="pull-right">Tempat Lahir</label></b>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" placeholder="No. Hp." name="nohp" value="<?= $peserta->nohp ?>">
+                            <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" value="<?= $peserta->tempat_lahir ?>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <b><label class="pull-right">Tanggal Lahir</label></b>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tgl_lahir" value="<?= $peserta->tgl_lahir ?>">
                         </div>
                     </div>
                 </div>
@@ -89,6 +103,18 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <b><label class="pull-right">No Hp</label></b>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="No. Hp." name="nohp" value="<?= $peserta->nohp ?>">
+                        </div>
+                    </div>
+                </div>
+
 
 
                 <div class="form-group">

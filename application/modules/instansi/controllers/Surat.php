@@ -56,8 +56,12 @@ class Surat extends CI_Controller
 
     is_read('tbl_surat', 'id_surat', $id_surat);
     $surat = $this->IM->getDetailSurat($id_surat);
+    $peserta = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $surat->id_peserta);
+
+
     $data = [
       'surat'     => $surat,
+      'peserta'     => $peserta,
       'content'   => 'instansi/surat/detail'
     ];
     $this->load->view('instansi/layout/wrapper', $data, FALSE);
@@ -78,6 +82,16 @@ class Surat extends CI_Controller
     $this->Crud_model->delete('tbl_surat', 'id_surat', $id_surat);
     $this->session->set_flashdata('msg', 'dihapus');
     redirect('instansi/surat');
+  }
+
+  function is_accept($id_peserta, $id_surat, $status)
+  {
+    $data = [
+      'is_accept'     => $status
+    ];
+    $this->Crud_model->edit('tbl_peserta', 'id_peserta', $id_peserta, $data);
+    $this->session->set_flashdata('msg', 'diaktifkan');
+    redirect('instansi/surat/detail/' . $id_surat, 'refresh');
   }
 }
 

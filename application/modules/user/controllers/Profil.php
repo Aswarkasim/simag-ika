@@ -75,6 +75,8 @@ class Profil extends CI_Controller
                     'namalengkap'   => $i->post('namalengkap'),
                     'asal_instansi' => $i->post('asal_instansi'),
                     'jenis_kelamin' => $i->post('jenis_kelamin'),
+                    'tgl_lahir'        => $i->post('tgl_lahir'),
+                    'tempat_lahir'        => $i->post('tempat_lahir'),
                     'alamat'        => $i->post('alamat'),
                     'motto'         => $i->post('motto'),
                     'email'         => $i->post('email'),

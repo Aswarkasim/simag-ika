@@ -3,10 +3,31 @@
 //$this->load->view('user/headprofil');
 
 ?>
-
+<div class="jumbotron pt-3">
+    <div class="container">
+        <a href="<?= base_url(); ?>" class="btn btn-success"><i class="fa fa-arrow-left"></i><i></i> Kembali</a><br><br>
+        <div class="row">
+            <div class="col-md-2">
+                <img width="100%" src="<?php if ($profil->gambar == "") {
+                                            echo base_url('assets/uploads/images/default.jpg');
+                                        } else {
+                                            echo base_url($profil->gambar);
+                                        } ?>" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="author-prof">@<?= $this->session->userdata('username_peserta') ?></div>
+                <h6 class="author-name"><?= $this->session->userdata('namalengkap') ?></h6>
+                <p><?= $profil->motto; ?></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
-    <?php $this->load->view('user/nav'); ?>
+    <?php //$this->load->view('user/nav'); 
+    ?>
+
+
     <div class="row">
         <div class="col-md-12">
             <br>
