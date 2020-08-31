@@ -6,9 +6,24 @@ $peserta = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $id_pesert
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('msg') ?>"></div>
 <div class="gagal" data-flashdata="<?= $this->session->flashdata('msg_er') ?>"></div>
 
+<div class="jumbotron mb-0 pb-2 pt-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <img width="100%" src="<?= base_url('assets/uploads/images/logo.png'); ?>" alt="">
+      </div>
+      <div class="col-md-11">
+        <h2 class="mb-0"><b>SEKDA JENEPONTO</b></h2>
+        <h3><b> PEMERINTAH KABUPATEN JENEPONTO</b></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#">SIMAG</a>
+    <a class="navbar-brand" href="#">SISTEM INFORMASI MAGANG</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
