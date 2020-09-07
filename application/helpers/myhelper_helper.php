@@ -9,17 +9,18 @@ if (!function_exists('nominal')) {
     }
 }
 
-function is_logged_in_user()
+function is_logged_in_instansi()
 {
     $ci = get_instance();
-    if ($ci->session->userdata('id_user') == '') {
-        redirect('home/auth');
+    if ($ci->session->userdata('id_instansi') == '') {
+        redirect('instansi/auth');
     }
 }
+
 function is_logged_in_admin()
 {
     $ci = get_instance();
-    if ($ci->session->userdata('id_admin') == '') {
+    if ($ci->session->userdata('id_user') == '') {
         redirect('admin/auth');
     }
 }
