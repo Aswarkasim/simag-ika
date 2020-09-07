@@ -13,8 +13,8 @@ $peserta = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $id_pesert
         <img width="100%" src="<?= base_url('assets/uploads/images/LOGO.png'); ?>" alt="">
       </div>
       <div class="col-md-11">
-        <h2 class="mb-0"><b>SEKDA JENEPONTO</b></h2>
-        <h3><b> PEMERINTAH KABUPATEN JENEPONTO</b></h3>
+        <h2 class="mb-0"><b>SEKRETARIAT DAERAH</b></h2>
+        <h3><b> KABUPATEN JENEPONTO</b></h3>
       </div>
     </div>
   </div>

@@ -90,7 +90,7 @@
 
 
         <div class="col-md-3">
-            <a href="<?= base_url('user/logbook'); ?>" target="_blank">
+            <a href="<?= base_url('user/logbook'); ?>" target="">
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
                         <div class="row">
