@@ -14,7 +14,8 @@
         </button>
       </div>
 
-      <form action="<?= base_url('user/logbook/add'); ?>" method="POST">
+      <?= form_open_multipart(base_url('user/logbook/add')) ?>
+      <form action="" method="POST">
 
         <input type="hidden" name="bantu" value="aa" id="">
         <div class="modal-body">
@@ -41,12 +42,19 @@
             <textarea name="aktifitas" id="editor" class="form-control" id="" required cols="30" rows="10"></textarea>
           </div>
 
+          <div class="form-group">
+            <label for="">Gambar</label>
+            <input type="file" name="gambar" required class="form-control">
+          </div>
+
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
           <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
       </form>
+      <?php form_close() ?>
     </div>
   </div>
 </div>

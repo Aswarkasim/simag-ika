@@ -13,8 +13,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
-      <form action="<?= base_url('user/logbook/edit/' . $row->id_logbook); ?>" method="POST">
+      <?= form_open_multipart(base_url('user/logbook/edit/' . $row->id_logbook)) ?>
+      <form method="POST">
 
         <input type="hidden" name="bantu" value="aa" id="">
         <div class="modal-body">
@@ -41,12 +41,21 @@
             <textarea name="aktifitas" id="editor1" class="form-control" id="" required cols="30" rows="10"><?= $row->aktifitas; ?></textarea>
           </div>
 
+          <div class="form-group">
+            <label for="">Gambar</label>
+            <input type="file" name="gambar" required class="form-control"><br>
+            <img src="<?= base_url($row->gambar); ?>" width="300px" alt="">
+          </div>
+
+
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
           <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
       </form>
+      <?php echo form_close() ?>
     </div>
   </div>
 </div>

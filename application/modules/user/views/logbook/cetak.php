@@ -37,6 +37,7 @@
           <th width="40px">NO</th>
           <th width="120px">TANGGAL</th>
           <th width="150x">WAKTU</th>
+          <th width="150x">DOKUMENTASI</th>
           <th>AKTIFITAS</th>
         </tr>
       </thead>
@@ -47,6 +48,7 @@
             <td><?= $no ?></td>
             <td><?= $row->tanggal ?></td>
             <td><?= $row->waktu_dari . ' - ' . $row->waktu_sampai ?></td>
+            <td><img src="<?= base_url($row->gambar); ?>" width="100px" alt=""></td>
             <td><?= $row->aktifitas ?></td>
 
           </tr>

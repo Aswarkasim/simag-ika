@@ -73,8 +73,8 @@ class Instansi extends CI_Controller
 
         $valid = $this->form_validation;
 
-        $valid->set_rules('instansiname', 'Nama Instansi', 'required');
-        $valid->set_rules('email', 'Email', 'required|valid_email');
+        $valid->set_rules('nama_instansi', 'Nama Instansi', 'required');
+        $valid->set_rules('username_instansi', 'Username Instansi', 'required');
         $valid->set_rules('password', 'Password', 'matches[re_password]');
         $valid->set_rules('re_password', 'Retype Password', 'matches[password]');
 
@@ -98,10 +98,9 @@ class Instansi extends CI_Controller
             }
             $data = [
                 'id_instansi'       => $id_instansi,
-                'instansiname'     => $i->post('instansiname'),
-                'email'         => $i->post('email'),
+                'nama_instansi'     => $i->post('nama_instansi'),
+                'username_instansi'     => $i->post('username_instansi'),
                 'password'      => $password,
-                'role'          => $i->post('role'),
                 'is_active'     => $i->post('is_aktif')
             ];
             $this->Crud_model->edit('tbl_instansi', 'id_instansi', $id_instansi, $data);
