@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <a href="<?= base_url(); ?>" class="btn btn-success ml-1"><i class="fa fa-arrow-left"></i> Kembali</a>
-      <!-- <a href="<?= base_url(); ?>" class="btn btn-success ml-1"><i class="fa fa-arrow-left"></i> Cetak</a> -->
+      <a href="<?= base_url('user/dashboard/cetakNilai'); ?>" class="btn btn-info ml-1" target="blank"><i class="fa fa-print"></i> Cetak</a>
     </div>
   </div>
   <br>

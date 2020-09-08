@@ -64,13 +64,44 @@ class Profil extends CI_Controller
 
                     $data = [
                         'id_peserta'    => $id_peserta,
-                        'namalengkap'   => $i->post('namalengkap'),
-                        'asal_instansi' => $i->post('asal_instansi'),
-                        'jenis_kelamin' => $i->post('jenis_kelamin'),
-                        'alamat'        => $i->post('alamat'),
-                        'motto'         => $i->post('motto'),
-                        'email'         => $i->post('email'),
-                        'nohp'          => $i->post('nohp'),
+
+                        'namalengkap'       => $i->post('namalengkap'),
+                        'username_peserta'  => $i->post('username'),
+                        'nohp'              => $i->post('nohp'),
+                        'email'             => $i->post('email'),
+                        'id_instansi'       => $i->post('id_instansi'),
+
+                        'asal_instansi'         => $i->post('asal_instansi'),
+                        'alamat_instansi'       => $i->post('alamat_instansi'),
+                        'no_telepon_instansi'   => $i->post('no_telepon_instansi'),
+                        'nama_guru_pendamping'  => $i->post('nama_guru_pendamping'),
+                        'jurusan'               => $i->post('jurusan'),
+
+
+                        'nama_panggilan'        => $i->post('nama_panggilan'),
+                        'nomor_induk'           => $i->post('nomor_induk'),
+                        'tgl_lahir'         => $i->post('tgl_lahir'),
+                        'tempat_lahir'          => $i->post('tempat_lahir'),
+                        'jenis_kelamin'         => $i->post('jenis_kelamin'),
+                        'agama'                 => $i->post('agama'),
+                        'tinggi_badan'          => $i->post('tinggi_badan'),
+                        'berat_badan'           => $i->post('berat_badan'),
+                        'suku'                  => $i->post('suku'),
+                        'alamat_sekarang'       => $i->post('alamat_sekarang'),
+                        'alamat_asal'           => $i->post('alamat_asal'),
+
+                        'nama_ayah'             => $i->post('nama_ayah'),
+                        'nama_ibu'              => $i->post('nama_ibu'),
+                        'nohp_ayah'             => $i->post('nohp_ayah'),
+                        'nohp_ibu'              => $i->post('nohp_ibu'),
+                        'pekerjaan_ayah'        => $i->post('pekerjaan_ayah'),
+                        'pekerjaan_ibu'         => $i->post('pekerjaan_ibu'),
+                        'alamat_ayah'           => $i->post('alamat_ayah'),
+                        'alamat_ibu'            => $i->post('alamat_ibu'),
+
+                        'pengalaman_organisasi' => $i->post('pengalaman_organisasi'),
+                        'hobi'                  => $i->post('hobi'),
+
                         'is_active'     => 1,
                         'is_accept'     => 0,
                         'gambar'        => $config['upload_path'] . $upload_data['uploads']['file_name']
@@ -82,15 +113,44 @@ class Profil extends CI_Controller
             } else {
                 $data = [
                     'id_peserta'    => $id_peserta,
-                    'namalengkap'   => $i->post('namalengkap'),
-                    'asal_instansi' => $i->post('asal_instansi'),
-                    'jenis_kelamin' => $i->post('jenis_kelamin'),
-                    'tgl_lahir'        => $i->post('tgl_lahir'),
-                    'tempat_lahir'        => $i->post('tempat_lahir'),
-                    'alamat'        => $i->post('alamat'),
-                    'motto'         => $i->post('motto'),
-                    'email'         => $i->post('email'),
-                    'nohp'          => $i->post('nohp'),
+
+                    'namalengkap'       => $i->post('namalengkap'),
+                    'username_peserta'  => $i->post('username'),
+                    'nohp'              => $i->post('nohp'),
+                    'email'             => $i->post('email'),
+                    'id_instansi'       => $i->post('id_instansi'),
+
+                    'asal_instansi'         => $i->post('asal_instansi'),
+                    'alamat_instansi'       => $i->post('alamat_instansi'),
+                    'no_telepon_instansi'   => $i->post('no_telepon_instansi'),
+                    'nama_guru_pendamping'  => $i->post('nama_guru_pendamping'),
+                    'jurusan'               => $i->post('jurusan'),
+
+
+                    'nama_panggilan'        => $i->post('nama_panggilan'),
+                    'nomor_induk'           => $i->post('nomor_induk'),
+                    'tgl_lahir'         => $i->post('tgl_lahir'),
+                    'tempat_lahir'          => $i->post('tempat_lahir'),
+                    'jenis_kelamin'         => $i->post('jenis_kelamin'),
+                    'agama'                 => $i->post('agama'),
+                    'tinggi_badan'          => $i->post('tinggi_badan'),
+                    'berat_badan'           => $i->post('berat_badan'),
+                    'suku'                  => $i->post('suku'),
+                    'alamat_sekarang'       => $i->post('alamat_sekarang'),
+                    'alamat_asal'           => $i->post('alamat_asal'),
+
+                    'nama_ayah'             => $i->post('nama_ayah'),
+                    'nama_ibu'              => $i->post('nama_ibu'),
+                    'nohp_ayah'             => $i->post('nohp_ayah'),
+                    'nohp_ibu'              => $i->post('nohp_ibu'),
+                    'pekerjaan_ayah'        => $i->post('pekerjaan_ayah'),
+                    'pekerjaan_ibu'         => $i->post('pekerjaan_ibu'),
+                    'alamat_ayah'           => $i->post('alamat_ayah'),
+                    'alamat_ibu'            => $i->post('alamat_ibu'),
+
+                    'pengalaman_organisasi' => $i->post('pengalaman_organisasi'),
+                    'hobi'                  => $i->post('hobi'),
+
                     'is_active'     => 1,
                     'is_accept'     => 0,
                 ];

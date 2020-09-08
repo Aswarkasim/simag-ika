@@ -59,14 +59,6 @@
                     <td>: <?= $profil->username_peserta ?></td>
                 </tr>
                 <tr>
-                    <td width="300px">Jenis Kelamin</td>
-                    <td>: <?= $profil->jenis_kelamin ?></td>
-                </tr>
-                <tr>
-                    <td width="300px">Tanggal Lahir</td>
-                    <td>: <?= $profil->tempat_lahir . ' ' . $profil->tgl_lahir ?></td>
-                </tr>
-                <tr>
                     <td width="300px">Email</td>
                     <td>: <?= $profil->email ?></td>
                 </tr>
@@ -74,6 +66,132 @@
                     <td width="300px">No Hp</td>
                     <td>: <?= $profil->nohp ?></td>
                 </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td width="300px">Asal Instansi</td>
+                    <td>: <?= $profil->asal_instansi ?></td>
+                </tr>
+
+                <tr>
+                    <td width="300px">Jurusan</td>
+                    <td>: <?= $profil->jurusan ?></td>
+                </tr>
+
+                <tr>
+                    <td width="300px">Alamat Instansi</td>
+                    <td>: <?= $profil->alamat_instansi ?></td>
+                </tr>
+
+                <tr>
+                    <td width="300px">No. Telepon Instansi</td>
+                    <td>: <?= $profil->no_telepon_instansi ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Guru Pendamping</td>
+                    <td>: <?= $profil->nama_guru_pendamping ?></td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td width="300px">Nama Panggilan</td>
+                    <td>: <?= $profil->nama_panggilan ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">No. Induk</td>
+                    <td>: <?= $profil->nomor_induk ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Tanggal Lahir</td>
+                    <td>: <?= $profil->tempat_lahir . ' ' . $profil->tgl_lahir ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Jenis Kelamin</td>
+                    <td>: <?= $profil->jenis_kelamin ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Tinggi Badan</td>
+                    <td>: <?= $profil->tinggi_badan ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Berat Badan</td>
+                    <td>: <?= $profil->berat_badan ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Suku</td>
+                    <td>: <?= $profil->suku ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">alamat_sekarang</td>
+                    <td>: <?= $profil->alamat_sekarang ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Alamat Asal</td>
+                    <td>: <?= $profil->alamat_asal ?></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td width="300px">Nama Ayah</td>
+                    <td>: <?= $profil->nama_ayah ?></td>
+                </tr>
+
+                <tr>
+                    <td width="300px">Nama Ibu</td>
+                    <td>: <?= $profil->nama_ibu ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Pekerjaan Ayah</td>
+                    <td>: <?= $profil->pekerjaan_ayah ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Pekerjaan Ibu</td>
+                    <td>: <?= $profil->pekerjaan_ibu ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">No Hp. Ayah</td>
+                    <td>: <?= $profil->nohp_ayah ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">No Hp. Ibu</td>
+                    <td>: <?= $profil->nohp_ibu ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Alamat Ayah</td>
+                    <td>: <?= $profil->nohp_ayah ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Alammat Ibu</td>
+                    <td>: <?= $profil->nohp_ibu ?></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td width="300px">Pengalaman Organisasi</td>
+                    <td>: <?= $profil->pengalaman_organisasi ?></td>
+                </tr>
+                <tr>
+                    <td width="300px">Hobi</td>
+                    <td>: <?= $profil->hobi ?></td>
+                </tr>
+
 
             </table>
             <div class="pull-left">

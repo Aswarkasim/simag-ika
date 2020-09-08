@@ -105,6 +105,17 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-4">
+                <label for="" class="pull-right"><strong>Jurusan</strong></label>
+              </div>
+              <div class="col-md-8">
+                <input class="form-control" name="jurusan" placeholder="Jurusan" type="text" value="<?= set_value('jurusan') ?>">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
                 <label for="" class="pull-right"><strong>Alamat Instansi</strong></label>
               </div>
               <div class="col-md-8">
@@ -119,7 +130,7 @@
                 <label for="" class="pull-right"><strong>Nomor Telp. Instansi</strong></label>
               </div>
               <div class="col-md-8">
-                <input class="form-control" name="nomor_telepon_instansi" placeholder="Nomor Telp. Instansi" type="text" value="<?= set_value('nomor_telepon_instansi') ?>">
+                <input class="form-control" name="no_telepon_instansi" placeholder="Nomor Telp. Instansi" type="text" value="<?= set_value('no_telepon_instansi') ?>">
               </div>
             </div>
           </div>
@@ -146,16 +157,6 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-4">
-                <label for="" class="pull-right"><strong>Asal Instansi</strong></label>
-              </div>
-              <div class="col-md-8">
-                <input class="form-control" name="asal_instansi" placeholder="Asal Instansi" type="text" value="<?= set_value('asal_instansi') ?>">
-              </div>
-            </div>
-          </div>
 
           <hr>
 
@@ -192,27 +193,6 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-4">
-                <label for="" class="pull-right"><strong>Asal Instansi</strong></label>
-              </div>
-              <div class="col-md-8">
-                <input class="form-control" name="asal_instansi" placeholder="Asal Instansi" type="text" value="<?= set_value('asal_instansi') ?>">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-4">
-                <label for="" class="pull-right"><strong>Jurusan</strong></label>
-              </div>
-              <div class="col-md-8">
-                <input class="form-control" name="jurusan" placeholder="Jurusan" type="text" value="<?= set_value('jurusan') ?>">
-              </div>
-            </div>
-          </div>
 
           <div class="form-group">
             <div class="row">
@@ -220,7 +200,7 @@
                 <label for="" class="pull-right"><strong>Tanggal Lahir</strong></label>
               </div>
               <div class="col-md-8">
-                <input class="form-control" name="tanggal_lahir" placeholder="Tanggal Lahir" type="text" value="<?= set_value('tanggal_lahir') ?>">
+                <input class="form-control" name="tgl_lahir" placeholder="Tanggal Lahir" type="date" value="<?= set_value('tgl_lahir') ?>">
               </div>
             </div>
           </div>
@@ -275,7 +255,7 @@
                 <label for="" class="pull-right"><strong>Berat Badan</strong></label>
               </div>
               <div class="col-md-8">
-                <input class="form-control" name="Berat Badan" placeholder="Berat Badan" type="text" value="<?= set_value('Berat Badan') ?>">
+                <input class="form-control" name="berat_badan" placeholder="Berat Badan" type="text" value="<?= set_value('berat_badan') ?>">
               </div>
             </div>
           </div>
@@ -308,7 +288,7 @@
                 <label for="" class="pull-right"><strong>Alamat Asal</strong></label>
               </div>
               <div class="col-md-8">
-                <input class="form-control" name="Alamat Asal" placeholder="Alamat Asal" type="text" value="<?= set_value('alamat_asal') ?>">
+                <input class="form-control" name="alamat_asal" placeholder="Alamat Asal" type="text" value="<?= set_value('alamat_asal') ?>">
               </div>
             </div>
           </div>
@@ -333,6 +313,28 @@
               </div>
               <div class="col-md-8">
                 <input class="form-control" name="nama_ibu" placeholder="Nama Ibu" type="text" value="<?= set_value('nama_ibu') ?>">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <label for="" class="pull-right"><strong>Pekerjaan Ayah</strong></label>
+              </div>
+              <div class="col-md-8">
+                <input class="form-control" name="pekerjaan_ayah" placeholder="Pekerjaan Ayah" type="text" value="<?= set_value('pekerjaan_ayah') ?>">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <label for="" class="pull-right"><strong>Pekerjaan Ibu</strong></label>
+              </div>
+              <div class="col-md-8">
+                <input class="form-control" name="pekerjaan_ibu" placeholder="Pekerjaan Ibu" type="text" value="<?= set_value('pekerjaan_ibu') ?>">
               </div>
             </div>
           </div>
@@ -411,7 +413,7 @@
 
           <button class="btn btn-success" type="submit"><i class="fa fa-folder"></i> Registrasi</button><br><br>
           <p>Sudah punya akun? silakan <a href="<?= base_url('home/auth') ?>">Login</a></p>
-          <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
+          <p class="mt-5 mb-3 text-muted">© 2020</p>
 
 
         </form>

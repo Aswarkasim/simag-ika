@@ -72,7 +72,7 @@ class Auth extends CI_Controller
     $valid = $this->form_validation;
     $valid->set_rules('namalengkap', 'Nama Lengkap', 'required', array('required' => $required));
     $valid->set_rules('username', 'Username', 'required|is_unique[tbl_user.username]', array('required' => $required, 'is_unique' => $is_username));
-    $valid->set_rules('email', 'email', 'required|is_unique[tbl_user.email]|valid_email', array('required' => $required, 'is_unique' => $is_email, 'valid_email' => '%s yang anda  masukkan tidak valid'));
+    $valid->set_rules('email', 'email', 'required|is_unique[tbl_user.email]|valid_email|is_unique[tbl_user.username]', array('required' => $required, 'is_unique' => $is_email, 'valid_email' => '%s yang anda  masukkan tidak valid'));
     $valid->set_rules('password', 'Password', 'required', array('required' => $required, 'is_unique' => $is_email));
     $valid->set_rules('re_password', 'Konfirmasi Password', 'required|matches[password]', array('required' => $required, 'matches' => '%s password yang anda masukkan tidak sama'));
 
@@ -95,6 +95,37 @@ class Auth extends CI_Controller
         'id_instansi'       => $i->post('id_instansi'),
         'password'          => sha1($i->post('password')),
         'is_active'         =>  1,
+
+        'asal_instansi'         => $i->post('asal_instansi'),
+        'alamat_instansi'       => $i->post('alamat_instansi'),
+        'no_telepon_instansi'   => $i->post('no_telepon_instansi'),
+        'nama_guru_pendamping'  => $i->post('nama_guru_pendamping'),
+        'jurusan'               => $i->post('jurusan'),
+
+
+        'nama_panggilan'        => $i->post('nama_panggilan'),
+        'nomor_induk'           => $i->post('nomor_induk'),
+        'tgl_lahir'         => $i->post('tgl_lahir'),
+        'tempat_lahir'          => $i->post('tempat_lahir'),
+        'jenis_kelamin'         => $i->post('jenis_kelamin'),
+        'agama'                 => $i->post('agama'),
+        'tinggi_badan'          => $i->post('tinggi_badan'),
+        'berat_badan'           => $i->post('berat_badan'),
+        'suku'                  => $i->post('suku'),
+        'alamat_sekarang'       => $i->post('alamat_sekarang'),
+        'alamat_asal'           => $i->post('alamat_asal'),
+
+        'nama_ayah'             => $i->post('nama_ayah'),
+        'nama_ibu'              => $i->post('nama_ibu'),
+        'nohp_ayah'             => $i->post('nohp_ayah'),
+        'nohp_ibu'              => $i->post('nohp_ibu'),
+        'pekerjaan_ayah'        => $i->post('pekerjaan_ayah'),
+        'pekerjaan_ibu'         => $i->post('pekerjaan_ibu'),
+        'alamat_ayah'           => $i->post('alamat_ayah'),
+        'alamat_ibu'            => $i->post('alamat_ibu'),
+
+        'pengalaman_organisasi' => $i->post('pengalaman_organisasi'),
+        'hobi'                  => $i->post('hobi'),
       ];
       $this->Crud_model->add('tbl_peserta', $data);
       $this->session->set_flashdata('msg', 'ditambah');

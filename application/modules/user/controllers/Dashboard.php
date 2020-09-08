@@ -97,4 +97,19 @@ class Dashboard extends CI_Controller
         ];
         $this->load->view('home/layout/wrapper', $data, FALSE);
     }
+
+    function cetakNilai()
+    {
+        $id_peserta = $this->session->userdata('id_peserta');
+        $peserta = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $id_peserta);
+        $nilai = $this->UM->dataNilai($id_peserta);
+        $rerata = $this->UM->rerata();
+
+        $data = [
+            'rerata'     => $rerata,
+            'peserta'     => $peserta,
+            'nilai'     => $nilai,
+        ];
+        $this->load->view('user/dashboard/cetak_nilai', $data, FALSE);
+    }
 }
