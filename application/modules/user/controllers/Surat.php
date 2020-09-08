@@ -41,7 +41,7 @@ class Surat extends CI_Controller
             'error'     => $this->upload->display_errors(),
             'content' => 'user/surat/index'
           ];
-          $this->load->view('user/layout/wrapper', $data, FALSE);
+          $this->load->view('home/layout/wrapper', $data, FALSE);
         } else {
           $upload_data = ['uploads' => $this->upload->data()];
           $data = [
