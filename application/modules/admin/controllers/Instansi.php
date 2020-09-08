@@ -9,9 +9,7 @@ class Instansi extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // if (($this->session->userdata('id_instansi') == "") || $this->session->userdata('role') != "Admin") {
-        //     redirect('error_page');
-        // }
+        is_logged_in_admin();
     }
 
 

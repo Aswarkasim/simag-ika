@@ -5,13 +5,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Surat extends CI_Controller
 {
 
+  public function __construct()
+  {
+    parent::__construct();
+    is_logged_in_admin();
+  }
+
+
   public function index()
   {
     $this->load->library('pagination');
     $this->load->model('admin/Admin_model', 'AM');
 
 
-    //    $id_user = $this->session->userdata('id_user');
 
     $config['base_url']     = base_url('admin/surat/index/');
     $config['total_rows']   = count($this->Crud_model->listing('tbl_surat'));

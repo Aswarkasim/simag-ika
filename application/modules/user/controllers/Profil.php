@@ -6,12 +6,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Profil extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+        is_logged_in_peserta();
+    }
+
+
     public function index()
     {
         $id_peserta = $this->session->userdata('id_peserta');
         $profil = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $id_peserta);
+
+        $instansi = $this->Crud_model->listing('tbl_instansi');
         $data = [
             'profil'    => $profil,
+            'instansi'    => $instansi,
             'content'   => 'user/profil/index'
         ];
         $this->load->view('home/layout/wrapper', $data, FALSE);
@@ -95,5 +105,16 @@ class Profil extends CI_Controller
         ];
 
         $this->load->view('home/layout/wrapper', $data, FALSE);
+    }
+
+    function ubahInstansi()
+    {
+        $id_peserta = $this->session->userdata('id_peserta');
+        $data = [
+            'id_instansi'   => $this->input->post('id_instansi')
+        ];
+        $this->Crud_model->edit('tbl_peserta', 'id_peserta', $id_peserta, $data);
+        $this->session->set_flashdata('msg', 'Instansi Telah diubah');
+        redirect('user/profil', 'refresh');
     }
 }

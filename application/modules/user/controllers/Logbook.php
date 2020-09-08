@@ -8,6 +8,7 @@ class Logbook extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+    is_logged_in_peserta();
     $this->load->model('user/User_model', 'UM');
   }
 

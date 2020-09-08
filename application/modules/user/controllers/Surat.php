@@ -6,6 +6,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Surat extends CI_Controller
 {
 
+  public function __construct()
+  {
+    parent::__construct();
+    is_logged_in_peserta();
+  }
+
+
   public function index()
   {
     $instansi = $this->Crud_model->listing('tbl_instansi');

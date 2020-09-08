@@ -61,7 +61,7 @@
                                     <?php } else { ?>
                                         <li><a href="<?= base_url($is_active . $row->id_peserta . '/1')  ?>"><i class="fa fa-power-off"></i> Aktifkan</a></li>
                                     <?php } ?> -->
-                                    <li><a href="<?= base_url($edit . $row->id_peserta)  ?>"><i class="fa fa-edit"></i> Edit</a></li>
+                                    <!-- <li><a href="<?= base_url($edit . $row->id_peserta)  ?>"><i class="fa fa-edit"></i> Edit</a></li> -->
                                     <li><a class="tombol-hapus" href="<?= base_url($delete . $row->id_peserta)  ?>"><i class="fa fa-trash"></i> Hapus</a></li>
                                 </ul>
                             </div>
