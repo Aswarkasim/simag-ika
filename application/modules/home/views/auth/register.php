@@ -116,17 +116,6 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-4">
-                <label for="" class="pull-right"><strong>Alamat Instansi</strong></label>
-              </div>
-              <div class="col-md-8">
-                <input class="form-control" name="alamat_instansi" placeholder="Alamat Instansi" type="text" value="<?= set_value('alamat_instansi') ?>">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-4">
                 <label for="" class="pull-right"><strong>Nomor Telp. Instansi</strong></label>
               </div>
               <div class="col-md-8">
