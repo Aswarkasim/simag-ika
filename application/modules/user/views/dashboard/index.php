@@ -89,71 +89,75 @@
         </div>
 
 
-        <div class="col-md-3">
-            <a href="<?= base_url('user/logbook'); ?>" target="">
-                <div class="card text-white bg-success mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <i class="fa fa-unlink fa-3x"></i>
+        <?php if ($peserta->is_accept == 'diterima') { ?>
+            <div class="col-md-3">
+                <a href="<?= base_url('user/logbook'); ?>" target="">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <i class="fa fa-unlink fa-3x"></i>
+                                </div>
+                                <div class="col-md-9">
+                                    <p class="text-white"><strong> PEKERJAAN</strong></p>
+                                    <hr>
+                                    <h4 class="card-text text-white">
+                                </div>
                             </div>
-                            <div class="col-md-9">
-                                <p class="text-white"><strong> PEKERJAAN</strong></p>
-                                <hr>
-                                <h4 class="card-text text-white">
-                            </div>
+
+                            <!-- <strong>AA</strong> -->
+                            </h4>
                         </div>
-
-                        <!-- <strong>AA</strong> -->
-                        </h4>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
 
-        <div class="col-md-3">
-            <a href="<?= base_url('user/laporan/index'); ?>">
-                <div class="card text-white bg-success mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <i class="fa fa-book fa-3x"></i>
+
+            <div class="col-md-3">
+                <a href="<?= base_url('user/laporan/index'); ?>">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <i class="fa fa-book fa-3x"></i>
+                                </div>
+                                <div class="col-md-9">
+                                    <p class="text-white"><strong> LAPORAN</strong></p>
+                                    <hr>
+                                    <h4 class="card-text text-white">
+                                </div>
                             </div>
-                            <div class="col-md-9">
-                                <p class="text-white"><strong> LAPORAN</strong></p>
-                                <hr>
-                                <h4 class="card-text text-white">
-                            </div>
+
+                            <!-- <strong>AA</strong> -->
+                            </h4>
                         </div>
-
-                        <!-- <strong>AA</strong> -->
-                        </h4>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
 
-        <div class="col-md-3">
-            <a href="<?= base_url('user/dashboard/nilai'); ?>">
-                <div class="card text-white bg-success mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <i class="fa fa-file-o fa-3x"></i>
+            <div class="col-md-3">
+                <a href="<?= base_url('user/dashboard/nilai'); ?>">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <i class="fa fa-file-o fa-3x"></i>
+                                </div>
+                                <div class="col-md-9">
+                                    <p class="text-white"><strong> NILAI</strong></p>
+                                    <hr>
+                                    <h4 class="card-text text-white">
+                                </div>
                             </div>
-                            <div class="col-md-9">
-                                <p class="text-white"><strong> NILAI</strong></p>
-                                <hr>
-                                <h4 class="card-text text-white">
-                            </div>
+
+                            <!-- <strong>AA</strong> -->
+                            </h4>
                         </div>
-
-                        <!-- <strong>AA</strong> -->
-                        </h4>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+
+        <?php } ?>
 
         <div class="col-md-3">
             <a href="<?= base_url('user/profil'); ?>">
