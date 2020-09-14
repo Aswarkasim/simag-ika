@@ -95,6 +95,7 @@ class Auth extends CI_Controller
         'id_instansi'       => $i->post('id_instansi'),
         'password'          => sha1($i->post('password')),
         'is_active'         =>  1,
+        'is_accept'         =>  'pending',
 
         'asal_instansi'         => $i->post('asal_instansi'),
         'alamat_instansi'       => $i->post('alamat_instansi'),
