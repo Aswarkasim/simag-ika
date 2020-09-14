@@ -28,7 +28,7 @@ $jumlahSurat = count($this->Crud_model->listingOneAll('tbl_surat', 'is_read', '0
                                 echo "active";
                             }
                             ?>"><a href="<?php echo base_url('admin/surat')
-                                        ?>"><i class="fa fa-envelope"></i> <span>Surat Masuk</span>
+                                            ?>"><i class="fa fa-envelope"></i> <span>Surat Masuk</span>
                     <span class="pull-right-container">
                         <span class="label label-primary pull-right"><?= $jumlahSurat; ?></span>
                     </span></a></li> -->

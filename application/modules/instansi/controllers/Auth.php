@@ -16,46 +16,50 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        $valid = $this->form_validation;
-
-        $valid->set_rules(
-            'email',
-            'Email',
-            'required',
-            array('required' => '%s harus diisi')
-        );
-        $valid->set_rules(
-            'password',
-            'Password',
-            'required|min_length[6]',
-            array(
-                'required'     => 'Password harus diisi',
-                'min_length'  => 'Password minimal 6 karakter'
-            )
-        );
-
-        if ($valid->run() === FALSE) {
-            $this->load->view('instansi/auth/login_instansi');
+        if ($this->session->userdata('id_instansi') != null) {
+            redirect('instansi/dashboard');
         } else {
-            $i          = $this->input;
-            $email      = $i->post('email');
-            $password   = $i->post('password');
-            $cek_login  = $this->IM->loginUsername($email, $password);
-            //print_r($email); die;
+            $valid = $this->form_validation;
 
-            if (!empty($cek_login) == 1) {
-                $s = $this->session;
-                $s->set_userdata('id_instansi', $cek_login->id_instansi);
-                $s->set_userdata('nama_instansi', $cek_login->nama_instansi);
-                $s->set_userdata('username_instansi', $cek_login->username_instansi);
+            $valid->set_rules(
+                'email',
+                'Email',
+                'required',
+                array('required' => '%s harus diisi')
+            );
+            $valid->set_rules(
+                'password',
+                'Password',
+                'required|min_length[6]',
+                array(
+                    'required'     => 'Password harus diisi',
+                    'min_length'  => 'Password minimal 6 karakter'
+                )
+            );
 
-                redirect(base_url('instansi/dashboard'), 'refresh');
+            if ($valid->run() === FALSE) {
+                $this->load->view('instansi/auth/login_instansi');
             } else {
-                $data = array(
-                    'error'     => 'Email atau password salah',
-                    'content'   => 'instansi/auth/content/'
-                );
-                $this->load->view('instansi/auth/login_instansi', $data);
+                $i          = $this->input;
+                $email      = $i->post('email');
+                $password   = $i->post('password');
+                $cek_login  = $this->IM->loginUsername($email, $password);
+                //print_r($email); die;
+
+                if (!empty($cek_login) == 1) {
+                    $s = $this->session;
+                    $s->set_userdata('id_instansi', $cek_login->id_instansi);
+                    $s->set_userdata('nama_instansi', $cek_login->nama_instansi);
+                    $s->set_userdata('username_instansi', $cek_login->username_instansi);
+
+                    redirect(base_url('instansi/dashboard'), 'refresh');
+                } else {
+                    $data = array(
+                        'error'     => 'Email atau password salah',
+                        'content'   => 'instansi/auth/content/'
+                    );
+                    $this->load->view('instansi/auth/login_instansi', $data);
+                }
             }
         }
     }
