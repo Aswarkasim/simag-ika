@@ -43,9 +43,10 @@ class User_model extends CI_Model
 
   function dataPeserta($id_peserta)
   {
-    $this->db->select('tbl_peserta.*, tbl_pembimbing.nama_pembimbing')
+    $this->db->select('tbl_peserta.*, tbl_pembimbing.nama_pembimbing, tbl_pekerjaan.nama_pekerjaan')
       ->from('tbl_peserta')
       ->join('tbl_pembimbing', 'tbl_pembimbing.id_pembimbing = tbl_peserta.id_pembimbing', 'left')
+      ->join('tbl_pekerjaan', 'tbl_pekerjaan.id_pekerjaan = tbl_peserta.id_pekerjaan', 'left')
       ->where('tbl_peserta.id_peserta', $id_peserta);
     return $this->db->get()->row();
   }

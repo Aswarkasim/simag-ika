@@ -10,13 +10,15 @@ class Profil extends CI_Controller
     {
         parent::__construct();
         is_logged_in_peserta();
+
+        $this->load->model('user/User_model', 'UM');
     }
 
 
     public function index()
     {
         $id_peserta = $this->session->userdata('id_peserta');
-        $profil = $this->Crud_model->listingOne('tbl_peserta', 'id_peserta', $id_peserta);
+        $profil = $this->UM->dataPeserta($id_peserta);
 
         $instansi = $this->Crud_model->listing('tbl_instansi');
         $data = [

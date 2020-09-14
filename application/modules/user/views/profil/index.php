@@ -17,7 +17,11 @@
             <div class="col-md-6">
                 <div class="author-prof">@<?= $this->session->userdata('username_peserta') ?></div>
                 <h6 class="author-name"><?= $this->session->userdata('namalengkap') ?></h6>
-                <p><?= $profil->motto; ?></p>
+                <p>
+                    <span>Pendamping Guru Pendamping (Sekolah) : <?= $profil->nama_guru_pendamping; ?></span><br>
+                    <span>Pendamping Lapangan : <?= $profil->nama_pembimbing; ?></span><br>
+                    <span>Penugasan : <?= $profil->nama_pekerjaan; ?></span><br>
+                </p>
             </div>
         </div>
     </div>
