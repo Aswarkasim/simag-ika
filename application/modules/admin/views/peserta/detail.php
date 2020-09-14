@@ -98,8 +98,7 @@
           </tr>
 
 
-          <?php// include('pembimbing.php');
-          //include('pekerjaan.php') ?>
+
 
         </table>
       </div>
