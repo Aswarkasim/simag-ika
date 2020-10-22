@@ -20,6 +20,9 @@ class Dashboard extends CI_Controller
         $data = [
             'title'     => 'Dashboard',
             'user'      => $user,
+            'peserta'      => $this->Crud_model->listing('tbl_user'),
+            'instansi'      => $this->Crud_model->listing('tbl_instansi'),
+            'admin'      => $this->Crud_model->listing('tbl_user'),
             'content'   => 'admin/dashboard/index'
         ];
 

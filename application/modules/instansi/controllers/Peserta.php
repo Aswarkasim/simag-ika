@@ -180,7 +180,7 @@ class Peserta extends CI_Controller
     }
 
     $nilai = $this->IM->nilaiAspek($id_instansi, $id_peserta);
-    $rerata = $this->IM->rerata();
+    $rerata = $this->IM->rerata($id_peserta);
     $this->updateRerata($id_peserta, $rerata->rerata);
     $data = [
       'add'       => 'instansi/peserta/updateNilai/' . $id_peserta,

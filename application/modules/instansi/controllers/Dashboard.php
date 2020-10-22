@@ -23,6 +23,9 @@ class Dashboard extends CI_Controller
         $data = [
             'title'     => 'Dashboard',
             'instansi'  => $instansi,
+            'surat'  => $this->Crud_model->listingOneAll('tbl_surat', 'id_instansi', $id_instansi),
+            'peserta'  => $this->Crud_model->listingOneAll('tbl_peserta', 'id_instansi', $id_instansi),
+            'pembimbing' => $this->Crud_model->listingOneAll('tbl_pembimbing', 'id_instansi', $id_instansi),
             'content'   => 'instansi/dashboard/index'
         ];
 

@@ -120,6 +120,8 @@ class Instansi extends CI_Controller
         $instasi = $this->Crud_model->listingOne('tbl_instansi', 'id_instansi', $id_instansi);
         $data = [
             'instansi'  => $instasi,
+            'aktif' => $this->Crud_model->listingOneAll('tbl_peserta', 'is_active', '1'),
+            'alumni' => $this->Crud_model->listingOneAll('tbl_peserta', 'is_active', '0'),
             'content'   => 'admin/instansi/detail'
         ];
         $this->load->view('admin/layout/wrapper', $data, FALSE);

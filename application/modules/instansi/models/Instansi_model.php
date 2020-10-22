@@ -63,9 +63,9 @@ class Instansi_model extends CI_Model
     $this->db->update('tbl_penilaian', $data);
   }
 
-  function rerata()
+  function rerata($id_peserta)
   {
-    return $this->db->query('SELECT ROUND(AVG (nilai)) as rerata FROM (tbl_penilaian)')->row();
+    return $this->db->query("SELECT ROUND(AVG (nilai)) as rerata FROM tbl_penilaian where id_peserta = $id_peserta")->row();
     //return $this->db->get()->row();
   }
 

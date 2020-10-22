@@ -62,6 +62,10 @@ class Aspek extends CI_Controller
 
   function delete($id_aspek)
   {
+    $nilai  = $this->Crud_model->listingOneAll('tbl_penilaian', 'id_aspek', $id_aspek);
+    foreach ($nilai as $row) {
+      $this->Crud_model->delete('tbl_penilaian', 'id_aspek', $id_aspek);
+    }
     $this->Crud_model->delete('tbl_aspek', 'id_aspek', $id_aspek);
     $this->session->set_flashdata('msg', 'dihapus');
     redirect('instansi/master/aspek');
