@@ -26,9 +26,8 @@
                 <td><?= $no++; ?></td>
                 <td><?= $row->tanggal; ?></td>
                 <td><?= $row->waktu_dari . ' - ' . $row->waktu_sampai; ?></td>
-                <td><?= $row->aktifitas; ?></td>
+                <td><?= $row->aktifitas ?></td>
                 <td>
-                  <?php// include('edit.php') ?>
                   <a href="<?= base_url('instansi/peserta/delete_logbook/' . $row->id_peserta . '/' .  $row->id_logbook); ?>" class="btn btn-xs btn-danger tombol-hapus"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>
