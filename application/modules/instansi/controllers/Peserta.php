@@ -208,7 +208,7 @@ class Peserta extends CI_Controller
     $var = '';
 
     foreach ($nilai as $row) {
-      $var = 'aspek' . $row->id_aspek . $row->nama_aspek;
+      $var = 'aspek' . $row->id_aspek;
 
       $data = [
         'nilai'   => $this->input->post($var)

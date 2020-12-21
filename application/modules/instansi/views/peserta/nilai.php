@@ -25,7 +25,7 @@
                   <label for="" class="pull-right"><?= $row->nama_aspek; ?></label>
                 </div>
                 <div class="col-md-9">
-                  <input type="number" name="aspek<?= $row->id_aspek . $row->nama_aspek ?>" value="<?= $row->nilai; ?>" required placeholder="<?= $row->nama_aspek; ?>" class="form-control">
+                  <input type="number" name="aspek<?= $row->id_aspek ?>" value="<?= $row->nilai; ?>" required placeholder="<?= $row->nama_aspek; ?>" class="form-control">
                 </div>
               </div>
             </div>
